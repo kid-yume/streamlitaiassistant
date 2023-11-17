@@ -1,0 +1,9 @@
+{
+    "DATABASE_NAME":"/Users/dev/Dev/AssistantTest/streamlitchatapp/utilities/testDatabase",
+    "SERVER_HOST":"localhost",
+    "API_KEY":"",
+    "ASSITANT_ID":"",
+    "EMAIL_API_KEY":"",
+    "EMAIL_SECRET_KEY":""
+
+}
