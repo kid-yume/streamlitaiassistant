@@ -2,11 +2,8 @@
 OpenAI Assitant API Streamlit Chat Example 
 ======
 <!-- mdformat on -->
-
 <p align="center">
-  <a href="#grabngo--">
-    <img src="https://storage.googleapis.com/gngloaners/gnglogo.png" alt="Grab n Go Icon" />
-  </a>
+  <img src="https://s3-us-west-1.amazonaws.com/storage-platform.cloud.appcelerator.com/pUWKoLkaVjoozttRq2KmEKV96SDzeidL/photos/20/08/57974cd0e46da10a78009a4b/final_original.jpg" alt="Grab n Go Icon" />
 </p>
 
 The OpenAI Assisstant API is the latest release from openAI and eventually how one will have to interact with agents. 
@@ -15,10 +12,11 @@ This repository was created to provide a complete example on how the process wor
 
 For this example I tried to keep it as simple as possible, so using SQLite Database and python was what I chose to go with. This is not meant to be a production solution in the slightest. I would definitely suggest taking better security measures and allocating resources more properly.  However, it is meant to show you that the features of Threads and functioncalling is not only amazing but now its more scalable then ever!  
 
-I also used ChatGPT3.5 Model to show that through function calling not only can i enable this AI to send Email but this model can now describe Images by leveraging a chatgpt4 model! Idk about you but that got me pretty excited.
 
 The reason I used a database was just because, I wanted to kind of save the state of the application. So when you close and re run the app the conversation is saved. Now if you want a start a new conversation clear the *THREADS* table. Just showing the power of threads through this. Before saving a previous conversation with [chat.completions] API would have been a bit tricky. 
 
+## Model in use 
+For this application I used chatgpt3.5-turbo I wanted to show how through the power of function calling we can grant it gpt-4 features such as image processing. This saves on token usage if your tasks are simple enough for the 3.5 engine to handle. 
 
 ## Running the application
 At Its base this application will run with just configuration to the config.json file. I will also provide an assistant to start off with that will automatically create the assistant for you and show you its ID. Going back to the config file; The key to each of these items is in the paranthesis following What it is: 	
@@ -57,10 +55,15 @@ UsageCount=1
  ```
  Then in pyodbc use 
  ```
- 
+ cnxn=pyodbc.connect('DRIVER={SQLite3 Driver};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+
  ```
 
-Download or pull the repository from the root of the directory run 
+
+### Running the Application
+You are finally ready to run the Application! 
+From the root of the directory run 
 ```
 streamlit run main.py
 ```
+
